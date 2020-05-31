@@ -19,7 +19,8 @@ details are available in the documentation.
 Example
 -------
 
-.. code-block::Python
+.. code-block:: python
+
     # Get data.
     raw_data = pd.read_csv(
         r'C:\Users\mdjordjic\source\repos\glm_hyper_parameter_optimization'
