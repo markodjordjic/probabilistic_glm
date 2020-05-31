@@ -3,11 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Bayesian Linear Regression's documentation!
-======================================================
+Welcome to Probabilistic Linear Regression's documentation!
+===========================================================
 
 This is a library for fitting of probabilistic General Linear Model for solving 
-of regression problems.
+regression problems.
+
+It facilitates the needs of fitting, diagnostifying, and persisting of
+probabilistic GLMs for solving regression tasks.
+
+Main functionality is available through ProabilisticGLM class. Further
+details are available in the documentation.
+
+A video of the fitting process is available below.
 
 .. youtube:: -wGzDdiG-hg
 
@@ -15,12 +23,5 @@ of regression problems.
    :maxdepth: 2
    :caption: Contents:
 
+Further
 .. automodapi:: bayesian_linear_regeression
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
