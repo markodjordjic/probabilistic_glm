@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Video &mdash; Probabilistic GLM 0.0.1 documentation</title>
+  <title>sequential_fit &mdash; Probabilistic GLM 0.0.1 documentation</title>
   
 
   
@@ -37,7 +37,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Probabilistic GLM 0.0.1 documentation" href="../index.html"/>
         <link rel="up" title="bayesian_linear_regeression Module" href="../documentation.html"/>
-        <link rel="prev" title="ProbabilisticGLM" href="bayesian_linear_regeression.ProbabilisticGLM.html"/> 
+        <link rel="next" title="ProbabilisticGLM" href="bayesian_linear_regeression.ProbabilisticGLM.html"/>
+        <link rel="prev" title="produce_plots" href="bayesian_linear_regeression.produce_plots.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -85,12 +86,12 @@
             
                 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../documentation.html">bayesian_linear_regeression Module</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../documentation.html#functions">Functions</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../documentation.html#classes">Classes</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="bayesian_linear_regeression.ProbabilisticGLM.html">ProbabilisticGLM</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Video</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../documentation.html#functions">Functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bayesian_linear_regeression.produce_plots.html">produce_plots</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">sequential_fit</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation.html#classes">Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../documentation.html#class-inheritance-diagram">Class Inheritance Diagram</a></li>
 </ul>
 </li>
@@ -140,13 +141,13 @@
         
           <li><a href="../documentation.html">bayesian_linear_regeression Module</a> &raquo;</li>
         
-      <li>Video</li>
+      <li>sequential_fit</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/api/bayesian_linear_regeression.Video.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/bayesian_linear_regeression.sequential_fit.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -159,65 +160,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="video">
-<h1>Video<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="bayesian_linear_regeression.Video">
-<em class="property">class </em><code class="sig-prename descclassname">bayesian_linear_regeression.</code><code class="sig-name descname">Video</code><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#Video"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.Video" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Class for making and saving of the video.</p>
-<dl class="attribute">
-<dt id="bayesian_linear_regeression.Video.collection_of_frames">
-<code class="sig-name descname">collection_of_frames</code><a class="headerlink" href="#bayesian_linear_regeression.Video.collection_of_frames" title="Permalink to this definition">¶</a></dt>
-<dd><p>Container with individual frames. Frame is an image buffered as
-numpy array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<p class="rubric">Methods Summary</p>
-<table class="longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#bayesian_linear_regeression.Video.add_frame" title="bayesian_linear_regeression.Video.add_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_frame</span></code></a>(buffered_image)</p></td>
-<td><p>Adds a frame to the collection of frames.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#bayesian_linear_regeression.Video.save_video" title="bayesian_linear_regeression.Video.save_video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save_video</span></code></a>(path)</p></td>
-<td><p>Save video</p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Methods Documentation</p>
-<dl class="method">
-<dt id="bayesian_linear_regeression.Video.add_frame">
-<code class="sig-name descname">add_frame</code><span class="sig-paren">(</span><em class="sig-param">buffered_image</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#Video.add_frame"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.Video.add_frame" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a frame to the collection of frames.</p>
+  <div class="section" id="sequential-fit">
+<h1>sequential_fit<a class="headerlink" href="#sequential-fit" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="bayesian_linear_regeression.sequential_fit">
+<code class="sig-prename descclassname">bayesian_linear_regeression.</code><code class="sig-name descname">sequential_fit</code><span class="sig-paren">(</span><em class="sig-param">features_for_training</em>, <em class="sig-param">targets_for_training</em>, <em class="sig-param">features_for_testing</em>, <em class="sig-param">targets_for_testing</em>, <em class="sig-param">steps</em>, <em class="sig-param">video_file</em>, <em class="sig-param">produce_video=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#sequential_fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.sequential_fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sequentialy fit the model</p>
+<p>Fitting sequential fitting of the model in order to diagnostify the
+quality of fit. Video fo the fitting process can be saved to disk.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>buffered_image</strong> (<em>numpy.array</em>) -- Image buffered as numpy array.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features_for_training</strong> (<em>numpy.array</em>) -- Features for fitting the model.</p></li>
+<li><p><strong>targets_for_training</strong> (<em>numpy.array</em>) -- Targets for testing the model.</p></li>
+<li><p><strong>features_for_testing</strong> (<em>numpy.array</em>) -- Features for fitting the model.</p></li>
+<li><p><strong>targets_for_testing</strong> (<em>numpy.array</em>) -- Targets for testing the model.</p></li>
+<li><p><strong>steps</strong> (<em>int</em>) -- Size of the step in which model will be fitted.</p></li>
+<li><p><strong>produce_video</strong> (<em>bool</em>) -- Indication if video is to be produced.</p></li>
+<li><p><strong>video_file</strong> (<em>str</em>) -- Absolute path where to the file in which the video will be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>errors</strong> (<em>list</em>) -- Model performance after every iteration computed as MAE.</p></li>
+<li><p><strong>mll</strong> (<em>list</em>) -- Marginal log-likelihood of the model after every iteration.</p></li>
+</ul>
+</p>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="bayesian_linear_regeression.Video.save_video">
-<code class="sig-name descname">save_video</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#Video.save_video"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.Video.save_video" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save video</p>
-<p>Video is saved to the disk in MP4 format.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) -- Absolute path with the file name in which to save video.
-Video is saved in as MP4 file.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </div>
@@ -229,8 +199,10 @@ Video is saved in as MP4 file.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="bayesian_linear_regeression.ProbabilisticGLM.html" class="btn btn-neutral float-right" title="ProbabilisticGLM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="bayesian_linear_regeression.ProbabilisticGLM.html" class="btn btn-neutral" title="ProbabilisticGLM" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="bayesian_linear_regeression.produce_plots.html" class="btn btn-neutral" title="produce_plots" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -13,7 +13,7 @@ ProbabilisticGLM
       ~ProbabilisticGLM.compute_log_marginal_likelihood
       ~ProbabilisticGLM.get_posterior
       ~ProbabilisticGLM.predict
-      ~ProbabilisticGLM.sample
+      ~ProbabilisticGLM.sample_new_data
       ~ProbabilisticGLM.tessellate
 
    .. rubric:: Methods Documentation
@@ -21,5 +21,5 @@ ProbabilisticGLM
    .. automethod:: compute_log_marginal_likelihood
    .. automethod:: get_posterior
    .. automethod:: predict
-   .. automethod:: sample
+   .. automethod:: sample_new_data
    .. automethod:: tessellate

@@ -1,7 +1,7 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+# with open("README.md", "r") as fh:
+    # long_description = fh.read()
 
 setuptools.setup(
     name="bayesian_linear_regression",
@@ -9,7 +9,7 @@ setuptools.setup(
     author="Marko Djordjic",
     author_email="marko.djordjic@outlook.com",
     description="A small example package",
-    long_description=long_description,
+    long_description=None,
     long_description_content_type="text/markdown",
     url="https://github.com/markodjordjic",
     packages=setuptools.find_packages(),

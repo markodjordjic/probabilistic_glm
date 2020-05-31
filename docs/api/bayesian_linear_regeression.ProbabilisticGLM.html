@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ProbabilisticGLM &mdash; Bayesian Linear Regression 0.0.1 documentation</title>
+  <title>ProbabilisticGLM &mdash; Probabilistic GLM 0.0.1 documentation</title>
   
 
   
@@ -35,10 +35,10 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Bayesian Linear Regression 0.0.1 documentation" href="../index.html"/>
-        <link rel="up" title="bayesian_linear_regeression Module" href="../code.html"/>
+    <link rel="top" title="Probabilistic GLM 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="bayesian_linear_regeression Module" href="../documentation.html"/>
         <link rel="next" title="Video" href="bayesian_linear_regeression.Video.html"/>
-        <link rel="prev" title="produce_plots" href="bayesian_linear_regeression.produce_plots.html"/> 
+        <link rel="prev" title="sequential_fit" href="bayesian_linear_regeression.sequential_fit.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -57,7 +57,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Bayesian Linear Regression
+            <a href="../index.html" class="icon icon-home"> Probabilistic GLM
           
 
           
@@ -84,16 +84,15 @@
           
             
             
-                <p class="caption"><span class="caption-text">Documentation:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../code.html">bayesian_linear_regeression Module</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../code.html#functions">Functions</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../code.html#classes">Classes</a><ul class="current">
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../documentation.html">bayesian_linear_regeression Module</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../documentation.html#functions">Functions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../documentation.html#classes">Classes</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">ProbabilisticGLM</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bayesian_linear_regeression.Video.html">Video</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../code.html#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../documentation.html#class-inheritance-diagram">Class Inheritance Diagram</a></li>
 </ul>
 </li>
 </ul>
@@ -110,7 +109,7 @@
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Bayesian Linear Regression</a>
+          <a href="../index.html">Probabilistic GLM</a>
         
       </nav>
 
@@ -140,7 +139,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../code.html">bayesian_linear_regeression Module</a> &raquo;</li>
+          <li><a href="../documentation.html">bayesian_linear_regeression Module</a> &raquo;</li>
         
       <li>ProbabilisticGLM</li>
     
@@ -165,7 +164,7 @@
 <h1>ProbabilisticGLM<a class="headerlink" href="#probabilisticglm" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="bayesian_linear_regeression.ProbabilisticGLM">
-<em class="property">class </em><code class="sig-prename descclassname">bayesian_linear_regeression.</code><code class="sig-name descname">ProbabilisticGLM</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">bayesian_linear_regeression.</code><code class="sig-name descname">ProbabilisticGLM</code><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#ProbabilisticGLM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class for initialization, inference of parameters, predication, and
 perstistence of probabilistic General Linear Model (GLM) for
@@ -297,8 +296,8 @@ between estimated alpha and beta</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#bayesian_linear_regeression.ProbabilisticGLM.predict" title="bayesian_linear_regeression.ProbabilisticGLM.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(features_for_prediction)</p></td>
 <td><p>Generates predictions.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProbabilisticGLM.sample</span></code></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#bayesian_linear_regeression.ProbabilisticGLM.sample_new_data" title="bayesian_linear_regeression.ProbabilisticGLM.sample_new_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample_new_data</span></code></a>(number_of_samples, ...)</p></td>
+<td><p>Sample (draw) new data</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#bayesian_linear_regeression.ProbabilisticGLM.tessellate" title="bayesian_linear_regeression.ProbabilisticGLM.tessellate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tessellate</span></code></a>(primary_alpha, primary_beta, ...)</p></td>
 <td><p>Tessellate the model to the features and targets.</p></td>
@@ -308,19 +307,21 @@ between estimated alpha and beta</p>
 <p class="rubric">Methods Documentation</p>
 <dl class="method">
 <dt id="bayesian_linear_regeression.ProbabilisticGLM.compute_log_marginal_likelihood">
-<code class="sig-name descname">compute_log_marginal_likelihood</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.compute_log_marginal_likelihood" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_log_marginal_likelihood</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#ProbabilisticGLM.compute_log_marginal_likelihood"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.compute_log_marginal_likelihood" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute marginal log-likelihood.</p>
+<p>Marginal log-likelihood is suitable for comparison among models
+of different complexities.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="bayesian_linear_regeression.ProbabilisticGLM.get_posterior">
-<code class="sig-name descname">get_posterior</code><span class="sig-paren">(</span><em class="sig-param">alpha</em>, <em class="sig-param">beta</em><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.get_posterior" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_posterior</code><span class="sig-paren">(</span><em class="sig-param">alpha</em>, <em class="sig-param">beta</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#ProbabilisticGLM.get_posterior"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.get_posterior" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute mean and covariance matrix of the posterior distribution.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="bayesian_linear_regeression.ProbabilisticGLM.predict">
-<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">features_for_prediction</em><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.predict" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">features_for_prediction</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#ProbabilisticGLM.predict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates predictions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -337,8 +338,32 @@ between estimated alpha and beta</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.sample_new_data">
+<code class="sig-name descname">sample_new_data</code><span class="sig-paren">(</span><em class="sig-param">number_of_samples</em>, <em class="sig-param">features_for_testing</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#ProbabilisticGLM.sample_new_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.sample_new_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample (draw) new data</p>
+<p>Data is sampled from inferred mean, covariance, and on the basis
+of features stored in the principal object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>number_of_samples</strong> (<em>int</em>) -- Number of new samples to be generated.</p></li>
+<li><p><strong>features_for_testing</strong> (<em>numpy.array</em>) -- Features to be used for testing. See notes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Generated data.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Features for testing should be scaled.</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="bayesian_linear_regeression.ProbabilisticGLM.tessellate">
-<code class="sig-name descname">tessellate</code><span class="sig-paren">(</span><em class="sig-param">primary_alpha</em>, <em class="sig-param">primary_beta</em>, <em class="sig-param">max_iterations</em>, <em class="sig-param">tolerance</em>, <em class="sig-param">verbose</em><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.tessellate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">tessellate</code><span class="sig-paren">(</span><em class="sig-param">primary_alpha</em>, <em class="sig-param">primary_beta</em>, <em class="sig-param">max_iterations</em>, <em class="sig-param">tolerance</em>, <em class="sig-param">verbose</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/bayesian_linear_regeression.html#ProbabilisticGLM.tessellate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.tessellate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tessellate the model to the features and targets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -378,7 +403,7 @@ between estimated alpha and beta</p>
         <a href="bayesian_linear_regeression.Video.html" class="btn btn-neutral float-right" title="Video" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="bayesian_linear_regeression.produce_plots.html" class="btn btn-neutral" title="produce_plots" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bayesian_linear_regeression.sequential_fit.html" class="btn btn-neutral" title="sequential_fit" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -387,7 +412,7 @@ between estimated alpha and beta</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Marko Djordjic.
+        &copy; Copyright 2020, M. Djordjic.
 
     </p>
   </div>

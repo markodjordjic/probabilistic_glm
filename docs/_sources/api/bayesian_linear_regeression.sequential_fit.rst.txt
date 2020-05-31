@@ -1,0 +1,6 @@
+sequential_fit
+==============
+
+.. currentmodule:: bayesian_linear_regeression
+
+.. autofunction:: sequential_fit

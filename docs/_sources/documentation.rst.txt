@@ -1,0 +1,3 @@
+.. automodapi:: bayesian_linear_regeression
+    :members:
+

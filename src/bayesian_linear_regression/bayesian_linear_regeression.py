@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as grid
 import io
@@ -216,7 +215,7 @@ class ProbabilisticGLM:
             (1/self.inferred_beta)
             + np.sum(
                 (features_for_prediction@self.inferred_covariance)
-                *features_for_prediction,
+                * features_for_prediction,
                 axis=1
             )
         )
@@ -258,8 +257,8 @@ class ProbabilisticGLM:
         """
         Compute marginal log-likelihood.
 
-        Returns
-        -------
+        Marginal log-likelihood is suitable for comparison among models
+        of different complexities.
 
         """
         # Get dimensionality of the training set (complexity of the model).
@@ -285,6 +284,99 @@ class ProbabilisticGLM:
         )
 
     # def save(self):
+
+
+def sequential_fit(features_for_training,
+                   targets_for_training,
+                   features_for_testing,
+                   targets_for_testing,
+                   steps,
+                   video_file,
+                   produce_video=False):
+    """
+    Sequentialy fit the model
+
+    Fitting sequential fitting of the model in order to diagnostify the
+    quality of fit. Video fo the fitting process can be saved to disk.
+
+    Parameters
+    ----------
+    features_for_training : numpy.array
+        Features for fitting the model.
+    targets_for_training : numpy.array
+        Targets for testing the model.
+    features_for_testing : numpy.array
+        Features for fitting the model.
+    targets_for_testing : numpy.array
+        Targets for testing the model.
+    steps : int
+        Size of the step in which model will be fitted.
+    produce_video : bool
+        Indication if video is to be produced.
+    video_file : str
+        Absolute path where to the file in which the video will be saved.
+
+    Returns
+    -------
+    errors : list
+        Model performance after every iteration computed as MAE.
+    mll : list
+        Marginal log-likelihood of the model after every iteration.
+    """
+    # Declare a video.
+    video_of_training = Video()
+    # Declare list to receive error statistics.
+    errors = []
+    # Declare list to receive MLL statistics.
+    mll = []
+    # Iterate over fitting data set and produce diagnostic plots.
+    for sample in range(steps, len(features_for_training), steps):
+        # Display message.
+        print('Fitting GLM to the training set of size: %s samples.' % sample)
+        # Fit model.
+        glm = ProbabilisticGLM()
+        glm.features = features_for_training[0:sample, :]
+        glm.targets = targets_for_training[0:sample]
+        glm.tessellate(
+            primary_alpha=1.,
+            primary_beta=float(1./np.var(targets_for_training)),
+            max_iterations=100,
+            tolerance=1e-6,
+            verbose=False
+        )
+        glm.compute_log_marginal_likelihood()
+        # Generate prediction.
+        predictions, uncertainty = glm.predict(
+            features_for_prediction=features_for_testing
+        )
+        # Compute error.
+        mae = np.round(np.mean(np.abs(
+            targets_for_testing.flatten()
+            - predictions.flatten()
+        )), decimals=4)
+        # Display message.
+        print('--- Model achieves error: %s.' % mae)
+        errors.append(mae)
+        mll.append(glm.mll)
+        if produce_video:
+            # Draw new samples.
+            glm.sample_new_data(
+                number_of_samples=5,
+                features_for_testing=features_for_testing
+            )
+            video_of_training.add_frame(produce_plots(
+                reference=targets_for_testing,
+                prediction=predictions,
+                uncertainty=uncertainty,
+                generated_data=glm.sampled_data,
+                samples=sample,
+                error=mae
+            ))
+    if produce_video:
+        # Write video from inventory of images to disk.
+        video_of_training.save_video(path=video_file)
+
+    return errors, mll
 
 
 def produce_plots(reference,
@@ -366,87 +458,3 @@ def produce_plots(reference,
     # Close the figure.
     plt.close('all')
     return image_as_array
-
-
-def demo():
-    # Get data.
-    raw_data = pd.read_csv(
-        r'C:\Users\mdjordjic\source\repos\glm_hyper_parameter_optimization'
-        r'\glm_hyper_parameter_optimization\x64\Release\data_set.csv',
-        header=None
-    )
-
-    # Split data.
-    training_data = raw_data.iloc[0:int(len(raw_data) * .8), ]
-    testing_data = raw_data.iloc[int(len(raw_data) * .8):, ]
-
-    # Get features (target is is placed in column no. 2).
-    index_of_target_column = 2
-    selection_vector = \
-        [i != index_of_target_column for i in range(0, raw_data.shape[1])]
-    features_for_training = np.array(
-        training_data.loc[:, selection_vector]
-    )
-    features_for_testing = np.array(
-        testing_data.loc[:, selection_vector]
-    )
-
-    # Standardize features.
-    mean = np.mean(features_for_training, axis=0)
-    standard_deviation = np.std(features_for_training, axis=0)
-    x_train = (features_for_training-mean) / standard_deviation
-    x_test = (features_for_testing-mean) / standard_deviation
-    print(np.var(x_train, axis=0))
-    print(np.var(x_test, axis=0))
-
-    # Add bias.
-    x_train = np.hstack((x_train, np.ones(shape=(len(x_train), 1))))
-    x_test = np.hstack((x_test, np.ones(shape=(len(x_test), 1))))
-
-    # Make targets.
-    y_train = training_data.iloc[:, index_of_target_column].values
-    y_test = testing_data.iloc[:, index_of_target_column].values
-
-    video_of_training = Video()
-    for sample in range(25, len(features_for_testing), 25):
-        # Display message.
-        print('Fitting GLM to the training set of size: %s samples.' % sample)
-        # Fit model.
-        glm = ProbabilisticGLM()
-        glm.features = x_train[0:sample, :]
-        glm.targets = y_train[0:sample]
-        glm.tessellate(
-            primary_alpha=1.,
-            primary_beta=float(1./np.var(y_test)),
-            max_iterations=100,
-            tolerance=1e-6,
-            verbose=False
-        )
-        glm.compute_log_marginal_likelihood()
-        # Generate prediction.
-        predictions, uncertainty = glm.predict(
-            features_for_prediction=x_test
-        )
-        # Compute error.
-        mae = np.round(np.mean(np.abs(
-            y_test.flatten()
-            - predictions.flatten()
-        )), decimals=4)
-        # Display message.
-        print('--- Model achieves error: %s.' % mae)
-        # Draw new samples.
-        glm.sample_new_data(
-            number_of_samples=5,
-            features_for_testing=x_test
-        )
-        video_of_training.add_frame(produce_plots(
-            reference=y_test,
-            prediction=predictions,
-            uncertainty=uncertainty,
-            generated_data=glm.sampled_data,
-            samples=sample,
-            error=mae
-        ))
-
-    # Write video from inventory of images to disk.
-    video_of_training.save_video(path=r'C:\Users\mdjordjic\out_l1.mp4')

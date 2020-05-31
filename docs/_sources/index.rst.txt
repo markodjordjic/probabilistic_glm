@@ -1,116 +1,88 @@
-.. Bayesian Linear Regression documentation master file, created by
-   sphinx-quickstart on Sun May 24 21:06:01 2020.
+.. Probabilistic GLM documentation master file, created by
+   sphinx-quickstart on Sun May 31 11:27:19 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-=================================================
-Probabilistic GLM for Solving Regression Problems
-=================================================
+=================
+Probabilistic GLM
+=================
 
-This is a library for fitting of probabilistic General Linear Model for
-solving regression problems.
-
-It facilitates the needs of fitting, diagnostifying, and persisting of
-probabilistic GLMs for solving regression tasks.
-
-Main functionality is available through ProabilisticGLM class. Further
-details are available in the documentation.
+This is a library for fitting probabilistic GML for solving regression
+tasks. It facilitates the fitting, diagnostics, and persistence of the models.
 
 Example
 -------
 
+Please take a look at the example below.
+
 .. code-block:: python
 
-    # Get data.
-    raw_data = pd.read_csv(
-        r'C:\Users\mdjordjic\source\repos\glm_hyper_parameter_optimization'
-        r'\glm_hyper_parameter_optimization\x64\Release\data_set.csv',
-        header=None
-    )
+   import pandas as pd
+   import numpy as np
+   import bayesian_linear_regression.bayesian_linear_regeression as br
 
-    # Split data.
-    training_data = raw_data.iloc[0:int(len(raw_data) * .8), ]
-    testing_data = raw_data.iloc[int(len(raw_data) * .8):, ]
+   # Get data.
+   raw_data = pd.read_csv(
+       r'C:\Users\mdjordjic\source\repos\glm_hyper_parameter_optimization'
+       r'\glm_hyper_parameter_optimization\x64\Release\data_set.csv',
+       header=None
+   )
 
-    # Get features (target is is placed in column no. 2).
-    index_of_target_column = 2
-    selection_vector = \
-        [i != index_of_target_column for i in range(0, raw_data.shape[1])]
-    features_for_training = np.array(
-        training_data.loc[:, selection_vector]
-    )
-    features_for_testing = np.array(
-        testing_data.loc[:, selection_vector]
-    )
+   # Split data.
+   training_data = raw_data.iloc[0:int(len(raw_data) * .8), ]
+   testing_data = raw_data.iloc[int(len(raw_data) * .8):, ]
 
-    # Standardize features.
-    mean = np.mean(features_for_training, axis=0)
-    standard_deviation = np.std(features_for_training, axis=0)
-    x_train = (features_for_training-mean) / standard_deviation
-    x_test = (features_for_testing-mean) / standard_deviation
-    print(np.var(x_train, axis=0))
-    print(np.var(x_test, axis=0))
+   # Get features (target is is placed in column no. 2).
+   index_of_target_column = 2
+   selection_vector = \
+       [i != index_of_target_column for i in range(0, raw_data.shape[1])]
+   features_for_training = np.array(
+       training_data.loc[:, selection_vector]
+   )
+   features_for_testing = np.array(
+       testing_data.loc[:, selection_vector]
+   )
 
-    # Add bias.
-    x_train = np.hstack((x_train, np.ones(shape=(len(x_train), 1))))
-    x_test = np.hstack((x_test, np.ones(shape=(len(x_test), 1))))
+   # Standardize features.
+   mean = np.mean(features_for_training, axis=0)
+   standard_deviation = np.std(features_for_training, axis=0)
+   x_train = (features_for_training-mean) / standard_deviation
+   x_test = (features_for_testing-mean) / standard_deviation
+   print(np.var(x_train, axis=0))
+   print(np.var(x_test, axis=0))
 
-    # Make targets.
-    y_train = training_data.iloc[:, index_of_target_column].values
-    y_test = testing_data.iloc[:, index_of_target_column].values
+   # Add bias.
+   x_train = np.hstack((x_train, np.ones(shape=(len(x_train), 1))))
+   x_test = np.hstack((x_test, np.ones(shape=(len(x_test), 1))))
 
-    video_of_training = Video()
-    for sample in range(25, len(features_for_testing), 25):
-        # Display message.
-        print('Fitting GLM to the training set of size: %s samples.' % sample)
-        # Fit model.
-        glm = ProbabilisticGLM()
-        glm.features = x_train[0:sample, :]
-        glm.targets = y_train[0:sample]
-        glm.tessellate(
-            primary_alpha=1.,
-            primary_beta=float(1./np.var(y_test)),
-            max_iterations=100,
-            tolerance=1e-6,
-            verbose=False
-        )
-        glm.compute_log_marginal_likelihood()
-        # Generate prediction.
-        predictions, uncertainty = glm.predict(
-            features_for_prediction=x_test
-        )
-        # Compute error.
-        mae = np.round(np.mean(np.abs(
-            y_test.flatten()
-            - predictions.flatten()
-        )), decimals=4)
-        # Display message.
-        print('--- Model achieves error: %s.' % mae)
-        # Draw new samples.
-        glm.sample_new_data(
-            number_of_samples=5,
-            features_for_testing=x_test
-        )
-        video_of_training.add_frame(produce_plots(
-            reference=y_test,
-            prediction=predictions,
-            uncertainty=uncertainty,
-            generated_data=glm.sampled_data,
-            samples=sample,
-            error=mae
-        ))
+   # Make targets.
+   y_train = training_data.iloc[:, index_of_target_column].values
+   y_test = testing_data.iloc[:, index_of_target_column].values
 
-    # Write video from inventory of images to disk.
-    video_of_training.save_video(path=r'C:\Users\mdjordjic\out_l1.mp4')
+   # Produce diagnostics video.
+   errors, mll = br.sequential_fit(
+       features_for_training=x_train,
+       targets_for_training=y_train,
+       features_for_testing=x_test,
+       targets_for_testing=y_test,
+       steps=25,
+       video_file=r'C:\Users\mdjordjic\br.mp4',
+       produce_video=True
+   )
 
-Fitting Process
----------------
+   # Plot diagnostics.
+   diagnostics = np.vstack((errors, mll))
+   figure, ax = plt.subplots(2, 1)
+   ax[0].plot(diagnostics[0, :])
+   ax[1].plot(diagnostics[1, :])
 
-.. youtube:: -wGzDdiG-hg
+Video of the Fitting Process
+----------------------------
+.. youtube:: eKz4eQBvlGE
 
+Documentation
+-------------
 .. toctree::
    :maxdepth: 2
-   :caption: Documentation:
 
-   code
-
+   documentation

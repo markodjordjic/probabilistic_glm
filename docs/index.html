@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Probabilistic GLM for Solving Regression Problems &mdash; Bayesian Linear Regression 0.0.1 documentation</title>
+  <title>Probabilistic GLM &mdash; Probabilistic GLM 0.0.1 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Bayesian Linear Regression 0.0.1 documentation" href="#"/>
-        <link rel="next" title="bayesian_linear_regeression Module" href="code.html"/> 
+    <link rel="top" title="Probabilistic GLM 0.0.1 documentation" href="#"/>
+        <link rel="next" title="bayesian_linear_regeression Module" href="documentation.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -55,7 +55,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> Bayesian Linear Regression
+            <a href="#" class="icon icon-home"> Probabilistic GLM
           
 
           
@@ -82,9 +82,8 @@
           
             
             
-                <p class="caption"><span class="caption-text">Documentation:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">bayesian_linear_regeression Module</a></li>
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">bayesian_linear_regeression Module</a></li>
 </ul>
 
             
@@ -99,7 +98,7 @@
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Bayesian Linear Regression</a>
+          <a href="#">Probabilistic GLM</a>
         
       </nav>
 
@@ -129,7 +128,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>Probabilistic GLM for Solving Regression Problems</li>
+      <li>Probabilistic GLM</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -148,17 +147,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="probabilistic-glm-for-solving-regression-problems">
-<h1>Probabilistic GLM for Solving Regression Problems<a class="headerlink" href="#probabilistic-glm-for-solving-regression-problems" title="Permalink to this headline">¶</a></h1>
-<p>This is a library for fitting of probabilistic General Linear Model for
-solving regression problems.</p>
-<p>It facilitates the needs of fitting, diagnostifying, and persisting of
-probabilistic GLMs for solving regression tasks.</p>
-<p>Main functionality is available through ProabilisticGLM class. Further
-details are available in the documentation.</p>
+  <div class="section" id="probabilistic-glm">
+<h1>Probabilistic GLM<a class="headerlink" href="#probabilistic-glm" title="Permalink to this headline">¶</a></h1>
+<p>This is a library for fitting probabilistic GML for solving regression
+tasks. It facilitates the fitting, diagnostics, and persistence of the models.</p>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get data.</span>
+<p>Please take a look at the example below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">bayesian_linear_regression.bayesian_linear_regeression</span> <span class="kn">as</span> <span class="nn">br</span>
+
+<span class="c1"># Get data.</span>
 <span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
     <span class="sa">r</span><span class="s1">&#39;C:\Users\mdjordjic\source\repos\glm_hyper_parameter_optimization&#39;</span>
     <span class="sa">r</span><span class="s1">&#39;\glm_hyper_parameter_optimization\x64\Release\data_set.csv&#39;</span><span class="p">,</span>
@@ -196,61 +196,36 @@ details are available in the documentation.</p>
 <span class="n">y_train</span> <span class="o">=</span> <span class="n">training_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">index_of_target_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">testing_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="n">index_of_target_column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
-<span class="n">video_of_training</span> <span class="o">=</span> <span class="n">Video</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">features_for_testing</span><span class="p">),</span> <span class="mi">25</span><span class="p">):</span>
-    <span class="c1"># Display message.</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Fitting GLM to the training set of size: </span><span class="si">%s</span><span class="s1"> samples.&#39;</span> <span class="o">%</span> <span class="n">sample</span><span class="p">)</span>
-    <span class="c1"># Fit model.</span>
-    <span class="n">glm</span> <span class="o">=</span> <span class="n">ProbabilisticGLM</span><span class="p">()</span>
-    <span class="n">glm</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="n">x_train</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">sample</span><span class="p">,</span> <span class="p">:]</span>
-    <span class="n">glm</span><span class="o">.</span><span class="n">targets</span> <span class="o">=</span> <span class="n">y_train</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">sample</span><span class="p">]</span>
-    <span class="n">glm</span><span class="o">.</span><span class="n">tessellate</span><span class="p">(</span>
-        <span class="n">primary_alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
-        <span class="n">primary_beta</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">y_test</span><span class="p">)),</span>
-        <span class="n">max_iterations</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
-        <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span>
-        <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span>
-    <span class="p">)</span>
-    <span class="n">glm</span><span class="o">.</span><span class="n">compute_log_marginal_likelihood</span><span class="p">()</span>
-    <span class="c1"># Generate prediction.</span>
-    <span class="n">predictions</span><span class="p">,</span> <span class="n">uncertainty</span> <span class="o">=</span> <span class="n">glm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span>
-        <span class="n">features_for_prediction</span><span class="o">=</span><span class="n">x_test</span>
-    <span class="p">)</span>
-    <span class="c1"># Compute error.</span>
-    <span class="n">mae</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span>
-        <span class="n">y_test</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-        <span class="o">-</span> <span class="n">predictions</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-    <span class="p">)),</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    <span class="c1"># Display message.</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;--- Model achieves error: </span><span class="si">%s</span><span class="s1">.&#39;</span> <span class="o">%</span> <span class="n">mae</span><span class="p">)</span>
-    <span class="c1"># Draw new samples.</span>
-    <span class="n">glm</span><span class="o">.</span><span class="n">sample_new_data</span><span class="p">(</span>
-        <span class="n">number_of_samples</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-        <span class="n">features_for_testing</span><span class="o">=</span><span class="n">x_test</span>
-    <span class="p">)</span>
-    <span class="n">video_of_training</span><span class="o">.</span><span class="n">add_frame</span><span class="p">(</span><span class="n">produce_plots</span><span class="p">(</span>
-        <span class="n">reference</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span>
-        <span class="n">prediction</span><span class="o">=</span><span class="n">predictions</span><span class="p">,</span>
-        <span class="n">uncertainty</span><span class="o">=</span><span class="n">uncertainty</span><span class="p">,</span>
-        <span class="n">generated_data</span><span class="o">=</span><span class="n">glm</span><span class="o">.</span><span class="n">sampled_data</span><span class="p">,</span>
-        <span class="n">samples</span><span class="o">=</span><span class="n">sample</span><span class="p">,</span>
-        <span class="n">error</span><span class="o">=</span><span class="n">mae</span>
-    <span class="p">))</span>
+<span class="c1"># Produce diagnostics video.</span>
+<span class="n">errors</span><span class="p">,</span> <span class="n">mll</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="n">sequential_fit</span><span class="p">(</span>
+    <span class="n">features_for_training</span><span class="o">=</span><span class="n">x_train</span><span class="p">,</span>
+    <span class="n">targets_for_training</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span>
+    <span class="n">features_for_testing</span><span class="o">=</span><span class="n">x_test</span><span class="p">,</span>
+    <span class="n">targets_for_testing</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span>
+    <span class="n">steps</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+    <span class="n">video_file</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\Users\mdjordjic\br.mp4&#39;</span><span class="p">,</span>
+    <span class="n">produce_video</span><span class="o">=</span><span class="bp">True</span>
+<span class="p">)</span>
 
-<span class="c1"># Write video from inventory of images to disk.</span>
-<span class="n">video_of_training</span><span class="o">.</span><span class="n">save_video</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\Users\mdjordjic\out_l1.mp4&#39;</span><span class="p">)</span>
+<span class="c1"># Plot diagnostics.</span>
+<span class="n">diagnostics</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">errors</span><span class="p">,</span> <span class="n">mll</span><span class="p">))</span>
+<span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">diagnostics</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">diagnostics</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="fitting-process">
-<h2>Fitting Process<a class="headerlink" href="#fitting-process" title="Permalink to this headline">¶</a></h2>
-<iframe width="640" height="360" style="margin-bottom: 25px" src="https://www.youtube.com/embed/-wGzDdiG-hg" frameborder="0" allowfullscreen="1">&nbsp;</iframe><div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Documentation:</span></p>
+<div class="section" id="video-of-the-fitting-process">
+<h2>Video of the Fitting Process<a class="headerlink" href="#video-of-the-fitting-process" title="Permalink to this headline">¶</a></h2>
+<iframe width="640" height="360" style="margin-bottom: 25px" src="https://www.youtube.com/embed/eKz4eQBvlGE" frameborder="0" allowfullscreen="1">&nbsp;</iframe></div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">bayesian_linear_regeression Module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="code.html#functions">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="code.html#classes">Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="code.html#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">bayesian_linear_regeression Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation.html#class-inheritance-diagram">Class Inheritance Diagram</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +240,7 @@ details are available in the documentation.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="code.html" class="btn btn-neutral float-right" title="bayesian_linear_regeression Module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="documentation.html" class="btn btn-neutral float-right" title="bayesian_linear_regeression Module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
     </div>
@@ -275,7 +250,7 @@ details are available in the documentation.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Marko Djordjic.
+        &copy; Copyright 2020, M. Djordjic.
 
     </p>
   </div>
