@@ -19,9 +19,11 @@ A video of the fitting process is available below.
 
 .. youtube:: -wGzDdiG-hg
 
+Further details available in:
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Documentation:
 
-Further
-.. automodapi:: bayesian_linear_regeression
+   code
+
