@@ -1,4 +1,5 @@
-# probabilistic_glm
+# Probabilistic GLM
+
 Fitting and diagnosing of probabilistic GLM for solving regression problems
 
 Further details and comprehensive documentation available at the:
