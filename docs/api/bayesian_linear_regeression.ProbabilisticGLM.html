@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ProbabilisticGLM &mdash; Bayesian Linear Regression 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Bayesian Linear Regression 0.0.1 documentation" href="../index.html"/>
+        <link rel="next" title="Video" href="bayesian_linear_regeression.Video.html"/>
+        <link rel="prev" title="produce_plots" href="bayesian_linear_regeression.produce_plots.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Bayesian Linear Regression
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="bayesian_linear_regeression.demo.html">demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayesian_linear_regeression.produce_plots.html">produce_plots</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ProbabilisticGLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayesian_linear_regeression.Video.html">Video</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bayesian Linear Regression</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>ProbabilisticGLM</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/bayesian_linear_regeression.ProbabilisticGLM.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="probabilisticglm">
+<h1>ProbabilisticGLM<a class="headerlink" href="#probabilisticglm" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM">
+<em class="property">class </em><code class="sig-prename descclassname">bayesian_linear_regeression.</code><code class="sig-name descname">ProbabilisticGLM</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for initialization, inference of parameters, predication, and
+perstistence of probabilistic General Linear Model (GLM) for
+solving regression problems.</p>
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.features">
+<code class="sig-name descname">features</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.features" title="Permalink to this definition">¶</a></dt>
+<dd><p>Features to be used for training (samples x features).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.targets">
+<code class="sig-name descname">targets</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Targets to be used for training (samples x 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.inferred_alpha">
+<code class="sig-name descname">inferred_alpha</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.inferred_alpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inferred estimate of precision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.inferred_beta">
+<code class="sig-name descname">inferred_beta</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.inferred_beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inferred estimate of noise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.inferred_mean">
+<code class="sig-name descname">inferred_mean</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.inferred_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inferred estimate of mean coefficients (1 x features).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.inferred_covariance">
+<code class="sig-name descname">inferred_covariance</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.inferred_covariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate of covariance matrix (features x features).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.sampled_data">
+<code class="sig-name descname">sampled_data</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.sampled_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Data sampled from inferred parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.tolerance">
+<code class="sig-name descname">tolerance</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.tolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Criterion for stopping tessellation, according to the proximity
+between estimated alpha and beta</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.training_iterations">
+<code class="sig-name descname">training_iterations</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.training_iterations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iteration at which training completed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.mll">
+<code class="sig-name descname">mll</code><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.mll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Marginal log-likelihood of the model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods Summary</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bayesian_linear_regeression.ProbabilisticGLM.compute_log_marginal_likelihood" title="bayesian_linear_regeression.ProbabilisticGLM.compute_log_marginal_likelihood"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_log_marginal_likelihood</span></code></a>()</p></td>
+<td><p>Compute marginal log-likelihood.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#bayesian_linear_regeression.ProbabilisticGLM.get_posterior" title="bayesian_linear_regeression.ProbabilisticGLM.get_posterior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_posterior</span></code></a>(alpha, beta)</p></td>
+<td><p>Compute mean and covariance matrix of the posterior distribution.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bayesian_linear_regeression.ProbabilisticGLM.predict" title="bayesian_linear_regeression.ProbabilisticGLM.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(features_for_prediction)</p></td>
+<td><p>Generates predictions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProbabilisticGLM.sample</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#bayesian_linear_regeression.ProbabilisticGLM.tessellate" title="bayesian_linear_regeression.ProbabilisticGLM.tessellate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tessellate</span></code></a>(primary_alpha, primary_beta, ...)</p></td>
+<td><p>Tessellate the model to the features and targets.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Documentation</p>
+<dl class="method">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.compute_log_marginal_likelihood">
+<code class="sig-name descname">compute_log_marginal_likelihood</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.compute_log_marginal_likelihood" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute marginal log-likelihood.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.get_posterior">
+<code class="sig-name descname">get_posterior</code><span class="sig-paren">(</span><em class="sig-param">alpha</em>, <em class="sig-param">beta</em><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.get_posterior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute mean and covariance matrix of the posterior distribution.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.predict">
+<code class="sig-name descname">predict</code><span class="sig-paren">(</span><em class="sig-param">features_for_prediction</em><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates predictions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>features_for_prediction</strong> (<em>numpy.array</em>) -- Predictors.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>predictions</strong> (<em>numpy.array</em>) -- Predictive mean.</p></li>
+<li><p><strong>uncertainty</strong> (<em>numpy.array</em>) -- Predictive variance.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="bayesian_linear_regeression.ProbabilisticGLM.tessellate">
+<code class="sig-name descname">tessellate</code><span class="sig-paren">(</span><em class="sig-param">primary_alpha</em>, <em class="sig-param">primary_beta</em>, <em class="sig-param">max_iterations</em>, <em class="sig-param">tolerance</em>, <em class="sig-param">verbose</em><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.ProbabilisticGLM.tessellate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tessellate the model to the features and targets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>primary_alpha</strong> (<em>float</em>) -- Initial value of the noise in the data.</p></li>
+<li><p><strong>primary_beta</strong> (<em>float</em>) -- Initial value for the precision of weights.</p></li>
+<li><p><strong>max_iterations</strong> (<em>int</em>) -- Total number of iterations.</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em>) -- Criteria which can be used to end tessellation.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) -- Indication to report or not to report progress.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>alpha</strong> (<em>float</em>) -- Inferred estimate of precision.</p></li>
+<li><p><strong>beta</strong> (<em>float</em>) -- Inferred estimate of noise.</p></li>
+<li><p><strong>mean</strong> (<em>numpy.array</em>) -- Inferred coefficients of means after tessellation.</p></li>
+<li><p><strong>covariance</strong> (<em>numpy.array</em>) -- Inferred coefficients covariance matrix after tessellation.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If desired bias needs to be added manually to the features.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bayesian_linear_regeression.Video.html" class="btn btn-neutral float-right" title="Video" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bayesian_linear_regeression.produce_plots.html" class="btn btn-neutral" title="produce_plots" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Marko Djordjic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Stanford-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

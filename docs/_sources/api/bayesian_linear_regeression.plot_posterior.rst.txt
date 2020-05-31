@@ -1,0 +1,6 @@
+plot_posterior
+==============
+
+.. currentmodule:: bayesian_linear_regeression
+
+.. autofunction:: plot_posterior

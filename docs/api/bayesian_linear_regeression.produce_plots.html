@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>produce_plots &mdash; Bayesian Linear Regression 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Bayesian Linear Regression 0.0.1 documentation" href="../index.html"/>
+        <link rel="next" title="ProbabilisticGLM" href="bayesian_linear_regeression.ProbabilisticGLM.html"/>
+        <link rel="prev" title="demo" href="bayesian_linear_regeression.demo.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Bayesian Linear Regression
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="bayesian_linear_regeression.demo.html">demo</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">produce_plots</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bayesian_linear_regeression.ProbabilisticGLM.html">ProbabilisticGLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayesian_linear_regeression.Video.html">Video</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Bayesian Linear Regression</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>produce_plots</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/bayesian_linear_regeression.produce_plots.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="produce-plots">
+<h1>produce_plots<a class="headerlink" href="#produce-plots" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="bayesian_linear_regeression.produce_plots">
+<code class="sig-prename descclassname">bayesian_linear_regeression.</code><code class="sig-name descname">produce_plots</code><span class="sig-paren">(</span><em class="sig-param">reference</em>, <em class="sig-param">prediction</em>, <em class="sig-param">uncertainty</em>, <em class="sig-param">generated_data</em>, <em class="sig-param">samples</em>, <em class="sig-param">error</em><span class="sig-paren">)</span><a class="headerlink" href="#bayesian_linear_regeression.produce_plots" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot reference, prediction, uncertainty estimate, and sampled data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reference</strong> (<em>numpy.array</em>) -- Actual values.</p></li>
+<li><p><strong>prediction</strong> (<em>numpy.array</em>) -- Generated predictions.</p></li>
+<li><p><strong>uncertainty</strong> (<em>numpy.array</em>) -- Point-wise uncertainty estimate.</p></li>
+<li><p><strong>generated_data</strong> (<em>numpy.array</em>) -- Generated data for plotting.</p></li>
+<li><p><strong>samples</strong> (<em>numpy.array</em>) -- Sampled (drawn) data to be plotted.</p></li>
+<li><p><strong>error</strong> (<em>float</em>) -- Error of the model.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Plot buffered as a numpy array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bayesian_linear_regeression.ProbabilisticGLM.html" class="btn btn-neutral float-right" title="ProbabilisticGLM" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bayesian_linear_regeression.demo.html" class="btn btn-neutral" title="demo" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Marko Djordjic.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Stanford-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

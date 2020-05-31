@@ -1,0 +1,6 @@
+produce_plots
+=============
+
+.. currentmodule:: bayesian_linear_regeression
+
+.. autofunction:: produce_plots

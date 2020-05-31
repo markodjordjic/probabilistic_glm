@@ -1,0 +1,19 @@
+Video
+=====
+
+.. currentmodule:: bayesian_linear_regeression
+
+.. autoclass:: Video
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~Video.add_frame
+      ~Video.save_video
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_frame
+   .. automethod:: save_video

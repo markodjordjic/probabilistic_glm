@@ -1,0 +1,25 @@
+ProbabilisticGLM
+================
+
+.. currentmodule:: bayesian_linear_regeression
+
+.. autoclass:: ProbabilisticGLM
+   :show-inheritance:
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~ProbabilisticGLM.compute_log_marginal_likelihood
+      ~ProbabilisticGLM.get_posterior
+      ~ProbabilisticGLM.predict
+      ~ProbabilisticGLM.sample
+      ~ProbabilisticGLM.tessellate
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: compute_log_marginal_likelihood
+   .. automethod:: get_posterior
+   .. automethod:: predict
+   .. automethod:: sample
+   .. automethod:: tessellate

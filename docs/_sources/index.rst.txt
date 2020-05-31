@@ -1,0 +1,26 @@
+.. Bayesian Linear Regression documentation master file, created by
+   sphinx-quickstart on Sun May 24 21:06:01 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Bayesian Linear Regression's documentation!
+======================================================
+
+This is a library for fitting of probabilistic General Linear Model for solving 
+of regression problems.
+
+.. youtube:: -wGzDdiG-hg
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+.. automodapi:: bayesian_linear_regeression
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

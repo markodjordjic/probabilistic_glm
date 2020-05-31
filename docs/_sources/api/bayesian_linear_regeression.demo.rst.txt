@@ -1,0 +1,6 @@
+demo
+====
+
+.. currentmodule:: bayesian_linear_regeression
+
+.. autofunction:: demo
