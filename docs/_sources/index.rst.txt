@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Probabilistic Linear Regression's documentation!
-===========================================================
+Probabilistic GLM for Solving Regression Problems
+=================================================
 
-This is a library for fitting of probabilistic General Linear Model for solving 
-regression problems.
+This is a library for fitting of probabilistic General Linear Model for
+solving regression problems.
 
 It facilitates the needs of fitting, diagnostifying, and persisting of
 probabilistic GLMs for solving regression tasks.
@@ -15,7 +15,9 @@ probabilistic GLMs for solving regression tasks.
 Main functionality is available through ProabilisticGLM class. Further
 details are available in the documentation.
 
-A video of the fitting process is available below.
+:caption: Example:
+
+:caption: Fitting Process:
 
 .. youtube:: -wGzDdiG-hg
 
